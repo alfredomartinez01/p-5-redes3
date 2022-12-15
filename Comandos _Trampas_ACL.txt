@@ -1,0 +1,29 @@
+configure terminal
+snmp-server ?
+snmp-server enable traps  //Levanta todas las trampas
+end
+show runn | i snmp //Se ven todas las trampas levantadas
+
+//Para deshabilitar las trampas
+conf t
+no snmp-server enable traps
+
+//Configuraciòn SNMP
+snmp-server view todo iso include //donde "todo" es el nombre de la vista
+snmp-server community secreta RW todo
+snmp-server host 192.168.0.10 version 2c secreta
+
+snmp-server enable traps snmp linkdown
+snmp-server enable traps snmp linkup
+//Estas trampas, avisan cuando una interfaz se conecta 
+
+	Puerto 161 -> Set/Get
+	Puerto 162 -> Trampas ->Se ejectuta con sudo
+
+
+
+snmp-server view todo iso include
+snmp-server community secreta RW todo
+snmp-server enable traps snmp linkdown
+snmp-server enable traps snmp linkup
+snmp-server host 192.168.0.10 version 2c secreta

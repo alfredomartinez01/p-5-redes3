@@ -1,0 +1,15 @@
+/*Para el router*/
+snmp-server community comunidad RW
+snmp-server enable traps snmp linkdown linkup
+snmp-server host 192.168.0.10 version 2c comunidad
+
+/*Para el gestor*/
+com2sec sec_name_com default comunidad
+
+group group_comunidad v2c sec_name_com
+group group_comunidad v1 sec_name_com
+
+view vis_comunidad_read include .1 00
+view vis_comunidad_write include .1.3.6.1.2.1.1 00
+
+access group_comunidad "" any noath exact vis_comunidad_read vis_comunidad_write vis_comunidad_read
