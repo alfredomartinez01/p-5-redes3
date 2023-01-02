@@ -23,7 +23,7 @@ config.addTransport(
 )
 
 #Configuracion de comunidad V1 y V2c
-config.addV1System(snmpEngine, 'todo', 'secreta')
+config.addV1System(snmpEngine, 'vis_comunidad_read', 'comunidad')
 
 #Configuracion de usuario V3
 #config.addV3User(

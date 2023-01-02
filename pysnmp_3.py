@@ -4,8 +4,8 @@ import datetime
 
 cmdGen = cmdgen.CommandGenerator()
 
-host = '192.168.1.1'
-community = 'secreta'
+host = '192.168.0.254'
+community = 'comunidad'
 
 # Hostname OID
 system_name = '1.3.6.1.2.1.1.5.0'
@@ -46,7 +46,7 @@ result['Fa0-0_In_uPackets'] = snmp_query(host, community, fa0_0_in_uPackets)
 result['Fa0-0_Out_Octet'] = snmp_query(host, community, fa0_0_out_oct)
 result['Fa0-0_Out_uPackets'] = snmp_query(host, community, fa0_0_out_uPackets)
 
-with open('/home/ricardo/ESCOM/Administracion/progPy/claseSNMP/Clase01/resultados.txt', 'a') as f:
+with open('/home/alfred/resultados.txt', 'w') as f:
     f.write(str(result))
     f.write('\n')
 

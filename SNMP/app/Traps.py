@@ -11,7 +11,7 @@ def traps():
         udp.UdpTransport().openServerMode(('192.168.0.10', 162))
     )
 
-    config.addV1System(snmpEngine, 'vis_pruebas_read', 'comun_pruebas')
+    config.addV1System(snmpEngine, 'vis_comunidad_read', 'comunidad')
 
     def cbFun(snmpEngine, stateReference, contextEngineId, contextName, varBinds, cbCtx):
         valor = str((varBinds.pop())[-1])

@@ -7,8 +7,8 @@ def snmp_query():
         time.sleep(5)
         result = {}
         errorIndication, errorStatus, errorIndex, varBinds = cmdgen.CommandGenerator().getCmd(
-            cmdgen.CommunityData('comun_pruebas'),
-            cmdgen.UdpTransportTarget(('192.168.0.1', 161)),
+            cmdgen.CommunityData('comunidad'),
+            cmdgen.UdpTransportTarget(('192.168.0.254', 161)),
             '1.3.6.1.2.1.2.2.1.10.1'
         )
 
